@@ -8,13 +8,42 @@
 <meta name="theme-color" content="#ffc400">
 <link rel="icon" href="/assets/favicon.png">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
-<meta property="og:title" content="Kralın Danışmanı · Saok's Apps">
-<meta property="og:description" content="Lidya sarayında kralın danışmanı ol. Kartı kaydır, krallığı ayakta tut. Android için ücretsiz hikâye oyunu.">
+<meta property="og:title" content="Kralın Danışmanı">
+<meta property="og:description" content="Lidya sarayında kralın danışmanı ol. Kartı kaydır, krallığı ayakta tut.">
 <meta property="og:image" content="https://saoksapps.com/assets/og-kralin.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
 <link rel="stylesheet" href="/assets/site.css">
+
+
+<style>
+.v1 { background: var(--black); color: #fff; padding-block: 3.5rem; }
+.v1 .wrap { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: 3rem; align-items: center; }
+.v1 .fan { position: relative; height: 470px; }
+.v1 .fan img { position: absolute; width: 200px; height: 444px; object-fit: cover; border-radius: 20px; border: 6px solid #2a2a30; box-shadow: 0 20px 40px rgba(0,0,0,.55); top: 12px; }
+.v1 .fan .a { left: 50%; transform: translateX(-50%); z-index: 2; top: 0; }
+.v1 .fan .b { left: calc(50% - 225px); transform: rotate(-8deg); top: 34px; }
+.v1 .fan .c { left: calc(50% + 25px); transform: rotate(8deg); top: 34px; }
+.v1 .info { display: grid; gap: 1rem; }
+.v1 .eyebrow { color: var(--yellow); }
+.v1 h1 { margin: 0; font-size: clamp(2.2rem,5vw,3.4rem); line-height: 1.08; }
+.v1 .lead { margin: 0; color: #c9c9cf; font-size: 1.1rem; }
+.v1 .buttons { margin-top: .25rem; }
+.f1 { display: grid; grid-template-columns: repeat(auto-fit, minmax(14rem,1fr)); gap: 1rem; }
+.f1 div { background: #fff; border-radius: 18px; padding: 1.25rem; border-top: 6px solid var(--yellow); display: grid; gap: .4rem; align-content: start; }
+.f1 h3 { margin: 0; font-size: 1.05rem; }
+.f1 p { margin: 0; color: var(--muted); font-size: .95rem; }
+.s1 { background: var(--black); padding-block: 3rem; }
+.s1 h2 { color: #fff; margin: 0 0 1.25rem; font-size: 1.4rem; }
+.shots { display: flex; gap: 1rem; overflow-x: auto; padding-bottom: .5rem; }
+.shots img { width: 200px; flex: none; border-radius: 16px; }
+.band { background: var(--yellow); padding-block: 2.5rem; }
+.band .wrap { display: flex; flex-wrap: wrap; gap: 1rem 2rem; align-items: center; justify-content: space-between; }
+.band p { margin: 0; max-width: 40rem; }
+.band .btn.black { white-space: nowrap; }
+@media (max-width: 760px) { .v1 .wrap { grid-template-columns: 1fr; } .v1 .fan { height: 360px; order: 2; } .v1 .fan img { width: 150px; height: 333px; } .v1 .fan .b { left: calc(50% - 170px); } .v1 .fan .c { left: calc(50% + 20px); } }
+</style>
 </head>
 <body>
 <header class="top">
@@ -24,45 +53,14 @@
   </div>
 </header>
 <main>
-  <section class="game-hero">
-    <div class="wrap">
-      <p class="eyebrow">Lidya Krallığı · MÖ 680</p>
-      <h1>Kralın Danışmanı</h1>
-      <p class="lead">Çoban Gyges, Kral Kandaules'i devirip Lidya tahtına oturdu. Yeni kralın bir danışmana ihtiyacı var: sana.</p>
-      <div class="buttons"><a class="btn yellow" href="https://play.google.com/store/apps/details?id=com.saoksapps.kralindanismani">Google Play'den indir</a></div>
-      <img class="feature" src="/assets/kralin-tanitim.jpg" width="1024" height="500" alt="Kralın Danışmanı: Gyges madalyonu ve saraydan üç yüz">
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="wrap features">
-      <div><h3>Dört güç, tek denge</h3><p>Halk, Ordu, Hazine ve Tapınak. Biri boşalır ya da taşarsa danışmanın sonu gelir; Kralın Güveni'ni de kaybetme.</p></div>
-      <div><h3>Seni hatırlayan bir saray</h3><p>Kraliçe, General Myrsilos, casusların başı Gölge ve diğerleri yaptıklarını unutmaz. Dostların sır verir, düşmanların fırsat kollar.</p></div>
-      <div><h3>Krizler</h3><p>Kimmer kuşatması, salgın, saray entrikası, Kolophon seferi. Krizde her kart sayılır.</p></div>
-      <div><h3>Kuşaklar boyu bir aile</h3><p>Danışmanın ölünce hikâye bitmez: çocuğun görevi devralır, dostlarını ve düşmanlarını miras alır. Gördüğün her son Aile Kroniği'ne yazılır.</p></div>
-    </div>
-  </section>
-
-  <section class="section" aria-label="Ekran görüntüleri" style="padding-top:0">
-    <div class="wrap shots">
-      <img src="/assets/ekran-1.jpg" width="540" height="960" alt="Başlık ekranı" loading="lazy">
-      <img src="/assets/ekran-2.jpg" width="540" height="960" alt="Kartı kaydırarak karar verme" loading="lazy">
-      <img src="/assets/ekran-3.jpg" width="540" height="960" alt="Başrahibe danışmanın geçmişteki iyiliğini hatırlıyor" loading="lazy">
-      <img src="/assets/ekran-4.jpg" width="540" height="960" alt="Kolophon Seferi krizi" loading="lazy">
-      <img src="/assets/ekran-5.jpg" width="540" height="960" alt="Kehanet işareti" loading="lazy">
-      <img src="/assets/ekran-6.jpg" width="540" height="960" alt="Kişiler paneli: dostlar ve düşmanlar" loading="lazy">
-    </div>
-  </section>
-
-  <section class="section" style="padding-top:0">
-    <div class="wrap">
-      <div class="note">
-        <h2>Reklamlar yalnızca sen istersen</h2>
-        <p>Oyun ücretsiz. Kaderini geri çevirmek ya da Gölge'nin fısıltısını dinlemek için isteğe bağlı kısa bir reklam izleyebilirsin; oyun seni hiçbir zaman reklama zorlamaz. Hesap gerekmez, kayıtların telefonunda kalır. <a href="/kralin-danismani/gizlilik/">Gizlilik politikası</a></p>
-        <p>Hikâye devam ediyor: Gyges'in oğlu Ardys'in çağı yakında.</p>
-      </div>
-    </div>
-  </section>
+<section class="v1"><div class="wrap">
+  <div class="info"><p class="eyebrow">Lidya Krallığı · MÖ 680</p><h1>Kralın Danışmanı</h1><p class="lead">Çoban Gyges, Kral Kandaules'i devirip Lidya tahtına oturdu. Yeni kralın bir danışmana ihtiyacı var: sana.</p><div class="buttons"><a class="btn yellow" href="https://play.google.com/store/apps/details?id=com.saoksapps.kralindanismani">Google Play'den indir</a></div>
+  <p class="eyebrow" style="color:#8d8d96"><span lang="en">Android</span> · Ücretsiz · Türkçe</p></div>
+  <div class="fan"><img class="b" src="/assets/oyun-rahibe.jpg" alt=""><img class="c" src="/assets/oyun-kisiler.jpg" alt=""><img class="a" src="/assets/oyun-ekrani.jpg" alt="Kralın Danışmanı oyun ekranı"></div>
+</div></section>
+<section class="section"><div class="wrap"><div class="f1"><div><h3>Dört güç, tek denge</h3><p>Halk, Ordu, Hazine ve Tapınak. Biri boşalır ya da taşarsa danışmanın sonu gelir; Kralın Güveni'ni de kaybetme.</p></div><div><h3>Seni hatırlayan bir saray</h3><p>Kraliçe, General Myrsilos, casusların başı Gölge ve diğerleri yaptıklarını unutmaz. Dostların sır verir, düşmanların fırsat kollar.</p></div><div><h3>Krizler</h3><p>Kimmer kuşatması, salgın, saray entrikası, Kolophon seferi. Krizde her kart sayılır.</p></div><div><h3>Kuşaklar boyu bir aile</h3><p>Danışmanın ölünce hikâye bitmez: çocuğun görevi devralır, dostlarını ve düşmanlarını miras alır. Kehanetler kuşaklar sonra gerçek olur.</p></div></div></div></section>
+<section class="s1"><div class="wrap"><h2>Oyundan görüntüler</h2><div class="shots"><img src="/assets/oyun-baslik.jpg" width="540" height="1200" alt="" loading="lazy"><img src="/assets/oyun-ekrani.jpg" width="540" height="1200" alt="" loading="lazy"><img src="/assets/oyun-rahibe.jpg" width="540" height="1200" alt="" loading="lazy"><img src="/assets/oyun-kriz.jpg" width="540" height="1200" alt="" loading="lazy"><img src="/assets/oyun-kehanet.jpg" width="540" height="1200" alt="" loading="lazy"><img src="/assets/oyun-kisiler.jpg" width="540" height="1200" alt="" loading="lazy"></div></div></section>
+<section class="band"><div class="wrap"><p><b>Reklamlar yalnızca sen istersen.</b> Oyun ücretsiz. Kaderini geri çevirmek ya da Gölge'nin fısıltısını dinlemek için isteğe bağlı kısa bir reklam izleyebilirsin; oyun seni hiçbir zaman reklama zorlamaz. Hesap gerekmez, kayıtların telefonunda kalır. <a href="/kralin-danismani/gizlilik/">Gizlilik politikası</a></p><a class="btn black" href="https://play.google.com/store/apps/details?id=com.saoksapps.kralindanismani">Google Play'den indir</a></div></section>
 </main>
 <footer id="iletisim">
   <div class="wrap">

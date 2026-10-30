@@ -15,6 +15,32 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
 <link rel="stylesheet" href="/assets/site.css">
+<style>
+.hero-b { text-align: center; padding-block: 3.5rem 5rem; }
+.hero-b .wrap { justify-items: center; }
+.hero-b .big-logo { width: min(520px, 86vw); height: auto; margin-bottom: .5rem; }
+.hero-b h1 { max-width: none; font-size: clamp(1.8rem, 5vw, 3rem); }
+.hero-b .lead { max-width: 34rem; }
+.hero-b .lead a { font-weight: 600; }
+.top .logo { visibility: hidden; }
+</style>
+<style>
+.g3sec { background: var(--black); color: #fff; }
+.g3sec h2 { color: #fff; }
+.g3 { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 2.5rem; align-items: center; }
+.g3 .fan { position: relative; height: 420px; }
+.g3 .fan img { position: absolute; width: 190px; height: 400px; object-fit: cover; border-radius: 18px; border: 6px solid #2a2a30; box-shadow: 0 20px 40px rgba(0,0,0,.5); top: 0; }
+.g3 .fan .s1 { left: 50%; transform: translateX(-50%); z-index: 2; height: 400px; object-fit: cover; }
+.g3 .fan .s2 { left: calc(50% - 210px); transform: rotate(-8deg); top: 30px; }
+.g3 .fan .s3 { left: calc(50% + 20px); transform: rotate(8deg); top: 30px; }
+.g3 .info { display: grid; gap: .8rem; }
+.g3 .eyebrow { color: var(--yellow); }
+.g3 h3 { margin: 0; font-size: 2rem; color: #fff; }
+.g3 .info > p { margin: 0; color: #c9c9cf; }
+.g3 ul { margin: 0; padding-left: 1.1rem; color: #e6e6ea; display: grid; gap: .3rem; }
+.g3 ul li::marker { color: var(--yellow); }
+@media (max-width: 760px) { .g3 { grid-template-columns: 1fr; } .g3 .fan { height: 340px; } .g3 .fan img { width: 140px; height: 300px; } .g3 .fan .s1 { height: 320px; } .g3 .fan .s2 { left: calc(50% - 165px); } .g3 .fan .s3 { left: calc(50% + 15px); } }
+</style>
 </head>
 <body>
 <header class="top">
@@ -24,27 +50,34 @@
   </div>
 </header>
 <main>
-  <section class="hero">
+  <section class="hero hero-b">
     <div class="wrap">
+      <img class="big-logo" src="/assets/saoksapps-wordmark.png" width="640" height="211" alt="saok's apps.">
       <p class="tagline">games · apps · stories</p>
-      <h1>Hikâyesi olan küçük oyunlar.</h1>
-      <p class="lead">Saok's Apps, birkaç dakikada açılıp kapanan ama aklında kalan mobil oyunlar ve uygulamalar yapan bağımsız bir stüdyo.</p>
+      <h1>Oyunlar. Uygulamalar. Hikâyeler.</h1>
+      <p class="lead">Türkiye'den bağımsız bir mobil stüdyo. İlk oyunumuz <a href="/kralin-danismani/">Kralın Danışmanı</a> Google Play'de.</p>
     </div>
   </section>
 
-  <section class="section">
+  <section class="section g3sec" id="oyunlar">
     <div class="wrap">
       <h2>Oyunlarımız</h2>
-      <article class="game-card">
-        <a class="art" href="/kralin-danismani/"><img src="/assets/kralin-tanitim.jpg" width="1024" height="500" alt="Kralın Danışmanı tanıtım görseli: Gyges madalyonu"></a>
+      <article class="g3">
+        <div class="fan">
+          <img class="s1" src="/assets/oyun-ekrani.jpg" alt="">
+          <img class="s2" src="/assets/oyun-rahibe.jpg" alt="">
+          <img class="s3" src="/assets/oyun-kisiler.jpg" alt="">
+        </div>
         <div class="info">
-          <p class="eyebrow"><span lang="en">Android</span> · Ücretsiz</p>
+          <p class="eyebrow">Yeni · <span lang="en">Android</span> · Ücretsiz</p>
           <h3>Kralın Danışmanı</h3>
           <p>MÖ 680, Sardes. Lidya'nın yeni kralı Gyges'in danışmanı ol: kartları kaydır, krallığı ayakta tut, ailenin hikâyesini kuşaklar boyu sürdür.</p>
-          <div class="buttons">
-            <a class="btn yellow" href="https://play.google.com/store/apps/details?id=com.saoksapps.kralindanismani">Google Play'de</a>
-            <a class="btn ghost-light" href="/kralin-danismani/">Oyunu tanı</a>
-          </div>
+          <ul>
+            <li>Dört gücü dengele: Halk, Ordu, Hazine, Tapınak</li>
+            <li>Seni hatırlayan bir saray, dostlar ve düşmanlar</li>
+            <li>Kuşaklar boyu süren bir aile hikâyesi</li>
+          </ul>
+          <div class="buttons"><a class="btn yellow" href="https://play.google.com/store/apps/details?id=com.saoksapps.kralindanismani">Google Play'de</a><a class="btn ghost-light" href="/kralin-danismani/">Oyunu tanı</a></div>
         </div>
       </article>
     </div>
