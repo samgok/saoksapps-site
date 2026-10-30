@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" href="/assets/favicon.png">
+<title>Kralın Danışmanı Gizlilik Politikası</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=IBM+Plex+Sans:wght@400;500&display=swap">
+<style>
+/* Layout: a single reading column like an inscribed tablet; gold meander band at top, language switch, numbered articles of a legal text */
+:root {
+  --bg: #f4efe4;
+  --surface: #ebe3d2;
+  --fg: #2a221c;
+  --muted: #6b5d4f;
+  --rule: #cdbf9f;
+  --gold: #8a6416;
+  --display: "Cinzel", "Trajan Pro", Georgia, serif;
+  --body: "Source Serif 4", Georgia, "Times New Roman", serif;
+  --ui: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #1c1713; --surface: #262019; --fg: #eee3cc; --muted: #b8ac94; --rule: #4a3d2c; --gold: #d4a33d;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #1c1713; --surface: #262019; --fg: #eee3cc; --muted: #b8ac94; --rule: #4a3d2c; --gold: #d4a33d;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--body);
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 0 4rem;
+}
+.band {
+  height: 14px;
+  margin: 0 calc(-1 * max(16px, env(safe-area-inset-left, 0px))) 0;
+  background:
+    repeating-linear-gradient(90deg, var(--gold) 0 10px, transparent 10px 20px) center / 100% 6px no-repeat,
+    linear-gradient(var(--gold), var(--gold)) top / 100% 2px no-repeat,
+    linear-gradient(var(--gold), var(--gold)) bottom / 100% 2px no-repeat;
+  opacity: .55;
+}
+main { max-width: 42rem; margin: 0 auto; display: grid; gap: 2rem; padding-top: 2.5rem; }
+header { display: grid; gap: .75rem; }
+.eyebrow {
+  font-family: var(--ui); font-size: .78rem; letter-spacing: .14em; text-transform: uppercase; color: var(--gold); margin: 0;
+}
+h1 {
+  font-family: var(--display); font-weight: 600; font-size: clamp(1.75rem, 5vw, 2.4rem);
+  line-height: 1.15; letter-spacing: .03em; margin: 0; text-wrap: balance;
+}
+.meta { font-family: var(--ui); font-size: .9rem; color: var(--muted); margin: 0; display: flex; flex-wrap: wrap; gap: .25rem 1.25rem; }
+.lang { display: flex; gap: .5rem; font-family: var(--ui); }
+.lang a {
+  font-size: .85rem; text-decoration: none; color: var(--muted);
+  border: 1px solid var(--rule); border-radius: 999px; padding: .3rem .9rem;
+}
+.lang a[aria-current="true"] { color: var(--bg); background: var(--fg); border-color: var(--fg); }
+.lang a:focus-visible, a:focus-visible, button:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+.summary {
+  background: var(--surface); border-left: 3px solid var(--gold); padding: 1rem 1.25rem; margin: 0;
+}
+.summary p { margin: 0; }
+section { display: grid; gap: .6rem; }
+h2 {
+  font-family: var(--display); font-weight: 500; font-size: 1.2rem; letter-spacing: .04em; margin: 0;
+  display: flex; gap: .75rem; align-items: baseline; text-wrap: balance;
+}
+h2 .n { font-family: var(--ui); font-size: .8rem; color: var(--gold); font-variant-numeric: tabular-nums; min-width: 1.6rem; }
+p, ul { margin: 0; }
+ul { padding-left: 1.2rem; display: grid; gap: .35rem; }
+a { color: var(--gold); text-underline-offset: 3px; }
+.contact {
+  display: flex; flex-wrap: wrap; align-items: center; gap: .5rem .75rem;
+  font-family: var(--ui); font-size: .95rem;
+}
+.contact code { font-family: var(--ui); background: var(--surface); padding: .25rem .5rem; border-radius: 4px; user-select: all; word-break: break-all; }
+.contact button {
+  font: inherit; font-size: .85rem; color: var(--fg); background: transparent; border: 1px solid var(--rule);
+  border-radius: 4px; padding: .25rem .65rem; cursor: pointer;
+}
+hr { border: 0; border-top: 1px solid var(--rule); margin: 0; }
+footer { font-family: var(--ui); font-size: .85rem; color: var(--muted); }
+body { margin: 0; }
+.home { font-family: var(--ui); font-size: .9rem; color: var(--muted); text-decoration: none; }
+</style>
+</head>
+<body>
+
+<div class="band" aria-hidden="true"></div>
+<main>
+  <a class="home" href="/">← Saok's Apps</a>
+  <header>
+    <p class="eyebrow" data-l="tr">Kralın Danışmanı · Android oyunu</p>
+    <p class="eyebrow" data-l="en" hidden>Kralın Danışmanı (The King's Advisor) · Android game</p>
+    <h1 data-l="tr">Gizlilik Politikası</h1>
+    <h1 data-l="en" hidden>Privacy Policy</h1>
+    <p class="meta" data-l="tr"><span>Geliştirici: Saok's Apps</span><span>Yürürlük: 29 Ekim 2026</span></p>
+    <p class="meta" data-l="en" hidden><span>Developer: Saok's Apps</span><span>Effective: 29 October 2026</span></p>
+    <nav class="lang" aria-label="Dil / Language">
+      <a href="#tr" id="lang-tr">Türkçe</a>
+      <a href="#en" id="lang-en">English</a>
+    </nav>
+  </header>
+
+  <!-- ============================ TÜRKÇE ============================ -->
+  <article data-l="tr" style="display:grid;gap:2rem">
+    <div class="summary"><p><strong>Kısaca:</strong> Oyun hesap istemez; adını, e-postanı ya da konumunu sormaz. Kayıtların yalnızca telefonunda durur. Reklamları Google AdMob gösterir ve yalnızca sen bir ödül için reklam izlemeyi seçtiğinde çıkar. AdMob bunun için reklam kimliği gibi cihaz bilgilerini kullanır.</p></div>
+
+    <section>
+      <h2><span class="n">1</span>Bu politika neyi kapsar</h2>
+      <p>Bu metin, Saok's Apps tarafından geliştirilen <strong>Kralın Danışmanı</strong> adlı mobil oyunun hangi verileri nasıl kullandığını açıklar. Oyunu yükleyip oynayarak bu politikayı kabul etmiş olursun.</p>
+    </section>
+
+    <section>
+      <h2><span class="n">2</span>Cihazında kalan veriler</h2>
+      <p>Oyunun ilerlemesi (danışman ailen, kararların, krizler, Aile Kroniği) ve ayarların (müzik, efekt, titreşim) yalnızca telefonunda saklanır. Bu veriler bize ya da başka bir sunucuya gönderilmez. Oyunu kaldırdığında silinirler; menüdeki "Baştan başla" ile de kaydı sıfırlayabilirsin.</p>
+    </section>
+
+    <section>
+      <h2><span class="n">3</span>Toplamadığımız veriler</h2>
+      <ul>
+        <li>Hesap, kullanıcı adı, şifre ya da e-posta adresi istemiyoruz.</li>
+        <li>Rehberine, fotoğraflarına, kamerana, mikrofonuna ya da GPS konumuna erişmiyoruz.</li>
+        <li>Kendi analiz ya da takip sistemimiz yok.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2><span class="n">4</span>Reklamlar: Google AdMob</h2>
+      <p>Oyunda <strong>ödüllü reklamlar</strong> vardır. Reklam yalnızca sen bir düğmeye basarak izlemeyi seçtiğinde gösterilir (örneğin "Kaderi geri çevir"). Oyun seni reklam izlemeye zorlamaz.</p>
+      <p>Reklamları Google LLC'nin AdMob hizmeti sunar. AdMob reklam göstermek, reklamların görüntülendiğini ölçmek ve sahte tıklamaları önlemek için şu bilgileri toplayıp işleyebilir:</p>
+      <ul>
+        <li>Android reklam kimliği (Advertising ID)</li>
+        <li>IP adresi ve buna dayalı yaklaşık konum (ülke, şehir düzeyinde)</li>
+        <li>Cihaz modeli, işletim sistemi sürümü, dil ve uygulama bilgileri</li>
+        <li>Reklamla etkileşimlerin (görüntüleme, tıklama) ve reklamla ilgili hata kayıtları</li>
+      </ul>
+      <p>Bu veriler doğrudan Google tarafından ve Google'ın kuralları çerçevesinde işlenir. Ayrıntılar: <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener">Google, iş ortaklarının uygulamalarından gelen bilgileri nasıl kullanır</a> ve <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Gizlilik Politikası</a>.</p>
+    </section>
+
+    <section>
+      <h2><span class="n">5</span>İzin ve tercihlerin</h2>
+      <p>Avrupa Ekonomik Alanı, Birleşik Krallık ve İsviçre'deki oyunculara, oyun ilk açıldığında Google'ın izin formu gösterilir. Kişiselleştirilmiş reklama izin vermezsen yine reklam izleyebilirsin; ancak bu reklamlar ilgi alanlarına göre seçilmez. Tercihini daha sonra oyunun menüsündeki <strong>"Reklam izinleri"</strong> düğmesinden değiştirebilirsin.</p>
+      <p>Her ülkede, Android'in <em>Ayarlar → Gizlilik → Reklamlar</em> bölümünden reklam kimliğini sıfırlayabilir ya da silebilirsin.</p>
+    </section>
+
+    <section>
+      <h2><span class="n">6</span>Satın almalar</h2>
+      <p>Oyunun bu sürümünde uygulama içi satın alma yoktur. İleride eklenirse ödemeler Google Play üzerinden yapılır; kart bilgilerin bize ulaşmaz. Bu politika o zaman güncellenir.</p>
+    </section>
+
+    <section>
+      <h2><span class="n">7</span>Çocuklar</h2>
+      <p>Kralın Danışmanı 13 yaşın altındaki çocuklara yönelik değildir ve bu yaştaki çocuklardan bilerek veri toplamayız.</p>
+    </section>
+
+    <section>
+      <h2><span class="n">8</span>Hakların</h2>
+      <p>6698 sayılı Kişisel Verilerin Korunması Kanunu (KVKK) ve Avrupa'daki GDPR kapsamında verilerine erişme, düzeltme ve silme hakların vardır. Oyun senden kişisel veri toplamadığı için bizde sana ait bir kayıt bulunmaz. AdMob'un işlediği veriler için Google'ın gizlilik araçlarını ve yukarıdaki ayarları kullanabilirsin. Sorun olursa bize yazabilirsin.</p>
+    </section>
+
+    <section>
+      <h2><span class="n">9</span>Değişiklikler</h2>
+      <p>Oyuna yeni bir özellik ya da hizmet eklendiğinde bu politika güncellenir ve yürürlük tarihi değişir. Önemli değişiklikleri oyunun mağaza sayfasında da duyururuz.</p>
+    </section>
+
+    <section>
+      <h2><span class="n">10</span>İletişim</h2>
+      <div class="contact"><span>Saok's Apps ·</span><code id="mail-tr">ssamgokk@gmail.com</code><button type="button" data-copy="mail-tr">Kopyala</button></div>
+    </section>
+  </article>
+
+  <!-- ============================ ENGLISH ============================ -->
+  <article data-l="en" hidden style="display:grid;gap:2rem">
+    <div class="summary"><p><strong>In short:</strong> The game needs no account and never asks for your name, email or location. Your saves stay on your phone. Ads are served by Google AdMob and appear only when you choose to watch one for a reward. AdMob uses device information such as your advertising ID to do this.</p></div>
+
+    <section>
+      <h2><span class="n">1</span>What this policy covers</h2>
+      <p>This policy explains what data the mobile game <strong>Kralın Danışmanı</strong> (The King's Advisor), developed by Saok's Apps, uses and how. By installing and playing the game you agree to this policy.</p>
+    </section>
+
+    <section>
+      <h2><span class="n">2</span>Data that stays on your device</h2>
+      <p>Your progress (your advisor family, decisions, crises, the Family Chronicle) and your settings (music, sound effects, vibration) are stored only on your phone. They are never sent to us or to any other server. Uninstalling the game deletes them, and "Start over" in the menu resets your save.</p>
+    </section>
+
+    <section>
+      <h2><span class="n">3</span>Data we do not collect</h2>
+      <ul>
+        <li>No account, username, password or email address.</li>
+        <li>No access to your contacts, photos, camera, microphone or GPS location.</li>
+        <li>No analytics or tracking system of our own.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2><span class="n">4</span>Advertising: Google AdMob</h2>
+      <p>The game contains <strong>rewarded ads</strong>. An ad is shown only when you tap a button to watch one (for example "Kaderi geri çevir", "Turn back fate"). The game never forces you to watch an ad.</p>
+      <p>Ads are provided by AdMob, a service of Google LLC. To serve ads, measure them and prevent fraud, AdMob may collect and process:</p>
+      <ul>
+        <li>Your Android advertising ID</li>
+        <li>Your IP address and approximate location derived from it (country or city level)</li>
+        <li>Device model, operating system version, language and app information</li>
+        <li>Ad interactions (impressions, clicks) and ad-related diagnostics</li>
+      </ul>
+      <p>This data is processed directly by Google under Google's own policies. See <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener">How Google uses information from sites or apps that use its services</a> and the <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a>.</p>
+    </section>
+
+    <section>
+      <h2><span class="n">5</span>Consent and your choices</h2>
+      <p>Players in the European Economic Area, the United Kingdom and Switzerland see Google's consent form when the game first opens. If you decline personalised ads you can still watch ads, but they will not be chosen based on your interests. You can change your choice later with the <strong>"Reklam izinleri"</strong> (Ad consent) button in the game menu.</p>
+      <p>In any country you can reset or delete your advertising ID in Android under <em>Settings → Privacy → Ads</em>.</p>
+    </section>
+
+    <section>
+      <h2><span class="n">6</span>Purchases</h2>
+      <p>This version of the game has no in-app purchases. If they are added later, payments will go through Google Play and your card details will never reach us. This policy will be updated at that time.</p>
+    </section>
+
+    <section>
+      <h2><span class="n">7</span>Children</h2>
+      <p>Kralın Danışmanı is not directed at children under 13, and we do not knowingly collect data from children of that age.</p>
+    </section>
+
+    <section>
+      <h2><span class="n">8</span>Your rights</h2>
+      <p>Under the GDPR in Europe and Turkey's Personal Data Protection Law (KVKK) you have the right to access, correct and delete your data. Because the game collects no personal data from you, we hold no records about you. For data processed by AdMob, use Google's privacy tools and the settings described above. Contact us if you have any questions.</p>
+    </section>
+
+    <section>
+      <h2><span class="n">9</span>Changes</h2>
+      <p>When a new feature or service is added to the game, this policy will be updated and its effective date will change. Significant changes will also be announced on the game's store page.</p>
+    </section>
+
+    <section>
+      <h2><span class="n">10</span>Contact</h2>
+      <div class="contact"><span>Saok's Apps ·</span><code id="mail-en">ssamgokk@gmail.com</code><button type="button" data-copy="mail-en">Copy</button></div>
+    </section>
+  </article>
+
+  <hr>
+  <footer>
+    <p data-l="tr">© 2026 Saok's Apps. Kralın Danışmanı, Lidya Krallığı'nda geçen bir hikâye oyunudur.</p>
+    <p data-l="en" hidden>© 2026 Saok's Apps. Kralın Danışmanı is a story game set in the Kingdom of Lydia.</p>
+  </footer>
+</main>
+
+<script>
+(function () {
+  function show(lang) {
+    if (lang !== 'en') lang = 'tr';
+    document.querySelectorAll('[data-l]').forEach(function (el) { el.hidden = el.getAttribute('data-l') !== lang; });
+    document.getElementById('lang-tr').setAttribute('aria-current', lang === 'tr' ? 'true' : 'false');
+    document.getElementById('lang-en').setAttribute('aria-current', lang === 'en' ? 'true' : 'false');
+    document.documentElement.lang = lang;
+  }
+  function fromHash() { show((location.hash || '').replace('#', '')); }
+  window.addEventListener('hashchange', fromHash);
+  fromHash();
+
+  document.querySelectorAll('[data-copy]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var el = document.getElementById(btn.getAttribute('data-copy'));
+      var text = el.textContent;
+      var original = btn.textContent;
+      function done(ok) {
+        btn.textContent = ok ? (btn.getAttribute('data-copy') === 'mail-en' ? 'Copied' : 'Kopyalandı') : original;
+        setTimeout(function () { btn.textContent = original; }, 1600);
+      }
+      function select() {
+        var r = document.createRange(); r.selectNodeContents(el);
+        var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+      }
+      try {
+        navigator.clipboard.writeText(text).then(function () { done(true); }, function () { select(); done(false); });
+      } catch (e) { select(); done(false); }
+    });
+  });
+})();
+</script>
+
+</body>
+</html>

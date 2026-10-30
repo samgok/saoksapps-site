@@ -1,0 +1,101 @@
+/* Saok's Apps: Lidya renkleri (koyu kahve, altın, krem), Cinzel başlıklar, Source Serif metin */
+:root {
+  --bg: #f4efe4;
+  --surface: #ebe3d2;
+  --fg: #2a221c;
+  --muted: #6b5d4f;
+  --rule: #cdbf9f;
+  --gold: #8a6416;
+  --terra: #b55a34;
+  --display: "Cinzel", "Trajan Pro", Georgia, serif;
+  --body: "Source Serif 4", Georgia, "Times New Roman", serif;
+  --ui: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #1c1713; --surface: #262019; --fg: #eee3cc; --muted: #b8ac94; --rule: #4a3d2c; --gold: #d4a33d; --terra: #d0754d;
+    color-scheme: dark;
+  }
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--body);
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 0 3rem;
+}
+img { max-width: 100%; height: auto; display: block; }
+a { color: var(--gold); text-underline-offset: 3px; }
+a:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+
+.band {
+  height: 14px;
+  margin: 0 calc(-1 * max(16px, env(safe-area-inset-left, 0px)));
+  background:
+    repeating-linear-gradient(90deg, var(--gold) 0 10px, transparent 10px 20px) center / 100% 6px no-repeat,
+    linear-gradient(var(--gold), var(--gold)) top / 100% 2px no-repeat,
+    linear-gradient(var(--gold), var(--gold)) bottom / 100% 2px no-repeat;
+  opacity: .55;
+}
+
+.top {
+  max-width: 60rem; margin: 0 auto; padding-block: 1.25rem;
+  display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap;
+}
+.brand { font-family: var(--display); font-weight: 600; letter-spacing: .08em; color: var(--fg); text-decoration: none; font-size: 1.05rem; }
+.top nav { display: flex; gap: 1.25rem; font-family: var(--ui); font-size: .92rem; }
+.top nav a { color: var(--muted); text-decoration: none; }
+.top nav a:hover { color: var(--fg); }
+
+main { max-width: 60rem; margin: 0 auto; display: grid; gap: 3rem; }
+main > * { min-width: 0; }
+.narrow { max-width: 42rem; }
+
+.eyebrow { font-family: var(--ui); font-size: .78rem; letter-spacing: .14em; text-transform: uppercase; color: var(--gold); margin: 0; }
+h1, h2 { font-family: var(--display); text-wrap: balance; margin: 0; }
+h1 { font-weight: 600; font-size: clamp(2rem, 6vw, 3.2rem); line-height: 1.1; letter-spacing: .03em; }
+h2 { font-weight: 500; font-size: 1.45rem; letter-spacing: .04em; }
+p { margin: 0; }
+.lead { font-size: 1.2rem; color: var(--muted); max-width: 38rem; }
+
+.hero { display: grid; gap: 1rem; padding-top: 2.5rem; }
+
+.game {
+  display: grid; grid-template-columns: auto 1fr; gap: 1.5rem; align-items: center;
+  background: var(--surface); border: 1px solid var(--rule); border-radius: 14px; padding: 1.5rem;
+}
+.game img { width: 112px; height: 112px; border-radius: 22px; }
+.game > div { display: grid; gap: .5rem; min-width: 0; }
+@media (max-width: 520px) { .game { grid-template-columns: 1fr; } }
+
+.buttons { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: .5rem; }
+.btn {
+  font-family: var(--ui); font-size: .95rem; font-weight: 500; text-decoration: none;
+  border-radius: 8px; padding: .65rem 1.2rem; border: 1px solid var(--rule); color: var(--fg);
+}
+.btn.primary { background: var(--fg); color: var(--bg); border-color: var(--fg); }
+
+.feature { width: 100%; border-radius: 12px; border: 1px solid var(--rule); }
+
+.features { display: grid; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); gap: 1.5rem 2rem; }
+.features section { display: grid; gap: .4rem; }
+.features h3 { font-family: var(--display); font-weight: 600; font-size: 1rem; letter-spacing: .06em; margin: 0; color: var(--gold); }
+
+.shots {
+  display: flex; gap: 1rem; overflow-x: auto; padding-bottom: .75rem;
+  scroll-snap-type: x mandatory;
+}
+.shots img { width: 220px; flex: none; border-radius: 10px; scroll-snap-align: start; }
+
+footer {
+  max-width: 60rem; margin: 4rem auto 0; padding-top: 1.5rem; border-top: 1px solid var(--rule);
+  font-family: var(--ui); font-size: .88rem; color: var(--muted);
+  display: flex; flex-wrap: wrap; gap: .5rem 1.5rem; justify-content: space-between;
+}
+footer a { color: var(--muted); }
